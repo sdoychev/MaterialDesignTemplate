@@ -12,5 +12,5 @@
     <dimen name="fab_margin_right">0.1dp</dimen>
     <dimen name="fab_margin_bottom">0.1dp</dimen>
 
-    <dimen name="main_activity_form_top_margin">10dp</dimen>
+    <dimen name="main_activity_form_top_margin">15dp</dimen>
 </resources>

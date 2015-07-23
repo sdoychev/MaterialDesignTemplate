@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">Material Design Template</string>
-
-    <string name="toolbar_title">Material Design</string>
+    <string name="toolbar_title">Design Template</string>
 
     <string name="action_settings">Settings</string>
+    <string name="open_navigation">Open Navigation</string>
+    <string name="close_navigation">Close Navigation</string>
 
     <string name="main_activity_name">What is your name?</string>
     <string name="main_activity_age">What is your age?</string>
     <string name="main_activity_position">What is your preferred position?</string>
     <string name="main_activity_past_teams">Previous teams?</string>
-    <string name="main_activity_favourite_food">Favourite food?</string>
-    <string name="main_activity_favourite_drink">Favourite drink?</string>
-    <string name="main_activity_favourite_movie">Favourite movie?</string>
 </resources>

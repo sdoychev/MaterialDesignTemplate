@@ -1,11 +1,14 @@
 package com.smd.studio.materialdesigntemplate;
 
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     //@Bind(R.id.tabLayout)
     //TabLayout tabLayout;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+    @Bind(R.id.navigation)
+    NavigationView navigation;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @OnClick(R.id.fab)
     public void clickFabButton() {
@@ -55,11 +63,37 @@ public class MainActivity extends AppCompatActivity {
     private void initLayout() {
         setSupportActionBar(toolbar);
         collapsingToolbarLayout.setTitle(getResources().getString(R.string.toolbar_title));
+
         //tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
         //tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
         //tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Set up the hamburger icon to open and close the drawer
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_navigation, R.string.close_navigation);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.drawerItemOne:
+                        Log.d("DRAWER", "Drawer Item One clicked!");
+                        break;
+                    case R.id.drawerItemTwo:
+                        Log.d("DRAWER", "Drawer Item Two clicked!");
+                        break;
+                    case R.id.drawerItemThree:
+                        Log.d("DRAWER", "Drawer Item Three clicked!");
+                        break;
+                    case R.id.drawerItemFour:
+                        Log.d("DRAWER", "Drawer Item Four clicked!");
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
